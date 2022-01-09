@@ -102,6 +102,6 @@ SPACESHIP_EXEC_TIME_SHOW=false
 # Aliases
 
 alias ls='ls --color=auto'
-alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dotfile='/usr/bin/git --git-dir=$HOME/.git-bare --work-tree=$HOME'
 alias sss='maim -s ~/pics/$(date +%m%d%y%H%M%S).png'
 alias ssr='maim ~/pics/$(date +%m%d%y%H%M%S).png'
