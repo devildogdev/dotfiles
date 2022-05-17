@@ -3,6 +3,7 @@ vim.go.errorbells = false
 vim.go.incsearch = true
 vim.go.scrolloff = 5
 vim.go.mouse = 'a'
+vim.go.termguicolors = true
 vim.wo.wrap = false
 vim.wo.number = true
 vim.bo.expandtab = true
@@ -13,6 +14,7 @@ vim.bo.smartindent = true
 -- Packer for package management
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use 'sainnhe/everforest'
     use 'shaunsingh/nord.nvim'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -40,7 +42,9 @@ require('packer').startup(function()
 end)
 
 -- Set the colorscheme
-vim.cmd[[colorscheme nord]]
+vim.cmd[[let g:everforest_background = 'hard']]
+vim.cmd[[let g:everforest_better_performance = 1]]
+vim.cmd[[colorscheme everforest]]
 
 -- Setup nvim-tree
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true })
@@ -50,7 +54,7 @@ require'nvim-tree'.setup {}
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'everforest',
     component_separators = { left = '|', right = '|'},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -130,8 +134,8 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, 
-    { name = 'buffer' },
+    { name = 'vsnip' },
+--    { name = 'buffer' },
     { name = 'emoji' }
     })
   })

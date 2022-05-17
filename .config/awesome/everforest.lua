@@ -1,6 +1,6 @@
----------------------------
--- Default awesome theme --
----------------------------
+----------------------------
+--    Everforest Theme    --
+----------------------------
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
@@ -13,22 +13,22 @@ local theme = {}
 
 theme.font          = "Hack Nerd Font 10"
 
-theme.bg_normal     = "#2E3440"
-theme.bg_focus      = "#8FBCBB"
-theme.bg_urgent     = "#B48EAD"
-theme.bg_minimize   = "#3B4252"
+theme.bg_normal     = "#2b3339"
+theme.bg_focus      = "#83c092"
+theme.bg_urgent     = "#e67e80"
+theme.bg_minimize   = "#d699b6"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#ECEFF4"
-theme.fg_focus      = "#2E3440"
-theme.fg_urgent     = "#EBCB8B"
-theme.fg_minimize   = "#5E81AC"
+theme.fg_normal     = "#d3c6aa"
+theme.fg_focus      = "#2b3339"
+theme.fg_urgent     = "#2b3339"
+theme.fg_minimize   = "#2b3339"
 
 theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(2)
-theme.border_normal = "#3B4252"
-theme.border_focus  = "#8FBCBB"
-theme.border_marked = "#D08770"
+theme.border_normal = "#4b565c"
+theme.border_focus  = "#83c092"
+theme.border_marked = "#dbbc7f"
 
 -- Give the taglist an inverted behavior
 theme.taglist_fg_occupied = theme.bg_focus
@@ -58,7 +58,7 @@ theme.tasklist_disable_task_name = true
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = themes_path.."nord/submenu.png"
+theme.menu_submenu_icon = themes_path.."everforest/submenu.png"
 theme.menu_height = dpi(13)
 theme.menu_width  = dpi(100)
 
@@ -67,25 +67,16 @@ theme.menu_width  = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper = "~/pics/Mountains.jpg"
+theme.wallpaper = "~/pics/alligator.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = themes_path.."nord/layouts/fairhw.png"
-theme.layout_fairv = themes_path.."nord/layouts/fairvw.png"
-theme.layout_floating  = themes_path.."nord/layouts/floatingw.png"
-theme.layout_magnifier = themes_path.."nord/layouts/magnifierw.png"
-theme.layout_max = themes_path.."nord/layouts/maxw.png"
-theme.layout_fullscreen = themes_path.."nord/layouts/fullscreenw.png"
-theme.layout_tilebottom = themes_path.."nord/layouts/tilebottomw.png"
-theme.layout_tileleft   = themes_path.."nord/layouts/tileleftw.png"
-theme.layout_tile = themes_path.."nord/layouts/tilew.png"
-theme.layout_tiletop = themes_path.."nord/layouts/tiletopw.png"
-theme.layout_spiral  = themes_path.."nord/layouts/spiralw.png"
-theme.layout_dwindle = themes_path.."nord/layouts/dwindlew.png"
-theme.layout_cornernw = themes_path.."nord/layouts/cornernww.png"
-theme.layout_cornerne = themes_path.."nord/layouts/cornernew.png"
-theme.layout_cornersw = themes_path.."nord/layouts/cornersww.png"
-theme.layout_cornerse = themes_path.."nord/layouts/cornersew.png"
+theme.layout_floating  = themes_path .. "default/layouts/floatingw.png"
+theme.layout_magnifier = themes_path .. "default/layouts/magnifierw.png"
+theme.layout_max = themes_path .. "default/layouts/maxw.png"
+theme.layout_fullscreen = themes_path .. "default/layouts/fullscreenw.png"
+theme.layout_tilebottom = themes_path .. "default/layouts/tilebottomw.png"
+theme.layout_tileleft   = themes_path .. "default/layouts/tileleftw.png"
+theme.layout_tile = themes_path .. "default/layouts/tilew.png"
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
@@ -94,7 +85,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "Nord-Menu"
+theme.icon_theme = nil
 
 return theme
 
