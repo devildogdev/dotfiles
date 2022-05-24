@@ -14,6 +14,10 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+-- Calendar Widget
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -110,6 +114,16 @@ menubar.show_categories = false
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+-- Add Calendar Widget to text clock
+local cw = calendar_widget({
+    placement = 'top_right',
+    start_sunday = true,
+})
+-- Setup buttons for Calendar
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
