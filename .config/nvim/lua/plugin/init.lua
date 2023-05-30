@@ -96,7 +96,7 @@ require('lazy').setup({
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {'filename', {'datetime', style = '%H:%M'}},
         lualine_x = {'encoding', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
