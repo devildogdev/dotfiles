@@ -15,11 +15,22 @@ require('lazy').setup({
 
 -- THEME
   {
-    'folke/tokyonight.nvim',
+    'rebelot/kanagawa.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      require('kanagawa').setup({
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = 'none'
+              }
+            }
+          }
+        }
+      })
+      require('kanagawa').load('dragon')
     end,
   },
 
@@ -46,18 +57,40 @@ require('lazy').setup({
       { 'neovim/nvim-lspconfig' },
       {
         'williamboman/mason.nvim',
-          build = ':MasonUpdate',
+        build = ':MasonUpdate',
         opts = {},
       },
       { 'williamboman/mason-lspconfig.nvim' },
       -- Completion
-      { 'hrsh7th/nvim-cmp' },
+      {
+         'hrsh7th/nvim-cmp',
+         config = function()
+           local cmp = require('cmp')
+           cmp.setup({
+             mapping = {
+               ['<CR>'] = cmp.mapping.confirm({select = false}),
+             }
+           })
+         end,
+      },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-buffer' },
       { 'L3MON4D3/LuaSnip' },
       { 'saadparwaiz1/cmp_luasnip' },
       { 'onsails/lspkind.nvim' },
+    config = function()
+      local lsp = require('lsp-zero').preset({
+        manage_nvim_cmp = {
+          set_sources = 'recommended',
+          set_extra_mappings = true
+        },
+      })
+      lsp.on_attach(function(_, bufnr)
+        lsp.default_keymaps({buffer = bufnr})
+      end)
+      lsp.setup_servers({'tsserver', 'python-lsp-server', 'lua_ls'})
+    end,
     },
   },
   -- TREESITTER
@@ -89,7 +122,7 @@ require('lazy').setup({
     },
     opts = {
       options = {
-        theme = 'tokyonight',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
@@ -138,21 +171,3 @@ require('lazy').setup({
   },
 }, {})
 
-local lsp = require('lsp-zero').preset({
-  manage_nvim_cmp = {
-    set_sources = 'recommended',
-    set_extra_mappings = true
-  },
-})
-
-local cmp = require('cmp')
-cmp.setup({
-  mapping = {
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-  }
-})
-
-lsp.on_attach(function(_, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
-end)
-lsp.setup()

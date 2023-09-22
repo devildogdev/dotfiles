@@ -6,12 +6,18 @@ setopt autocd extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Command Completion and Double-Tab Menu
 zstyle :compinstall filename '/home/outlaw/.zshrc'
 zstyle ':completion:*' menu select
 
-autoload -Uz compinit up-line-or-beginning-search down-line-or-beginning-search
-compinit
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
@@ -65,3 +71,4 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls='ls --color=auto'
 alias nv='nvim'
 
+pfetch
