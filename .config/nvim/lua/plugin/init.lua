@@ -89,7 +89,7 @@ require('lazy').setup({
       lsp.on_attach(function(_, bufnr)
         lsp.default_keymaps({buffer = bufnr})
       end)
-      lsp.setup_servers({'tsserver', 'python-lsp-server', 'lua_ls'})
+      lsp.setup_servers({'tsserver', 'pylsp', 'lua_ls'})
     end,
     },
   },
