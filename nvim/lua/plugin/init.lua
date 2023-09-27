@@ -68,7 +68,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -78,9 +78,14 @@ require('lazy').setup({
       local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
-        formatting = lsp_zero.cmp_format(),
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'buffer' },
+        },
         mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<Tab>'] = cmp_action.tab_complete(),
+          ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+          ['<CR>'] = cmp.mapping.confirm({select = false}),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
@@ -91,17 +96,17 @@ require('lazy').setup({
   },
   {
     'neovim/nvim-lspconfig',
-    cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-    event = {'BufReadPre', 'BufNewFile'},
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'williamboman/mason-lspconfig.nvim' },
     },
     config = function()
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_lspconfig()
 
-      lsp_zero.on_attach(function(client, bufnr)
+      lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({buffer = bufnr})
       end)
 
