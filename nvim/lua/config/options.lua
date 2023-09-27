@@ -15,7 +15,6 @@ vim.bo.tabstop = 4
 vim.bo.smartindent = true
 vim.o.hlsearch = false
 vim.o.incsearch = true
-vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
