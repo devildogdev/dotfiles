@@ -1,0 +1,19 @@
+set scrolloff 10
+set icons
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd trash ${{
+    if [ -z "$fs" ]; then
+        mv "$f" ~/.Trash
+    else
+        IFS="$(printf '\n\t')"; mv $fs ~/.Trash
+    fi
+}}
+
+map D trash
