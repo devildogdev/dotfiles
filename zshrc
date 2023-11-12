@@ -13,6 +13,11 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# Prompt
+source ~/.config/zsh/git-prompt.sh
+setopt PROMPT_SUBST
+precmd() { __git_ps1 '%B%F{4}%1~%f%b %F{5}' '%f%F{2}❱%f ' '[%s] '}
+
 # Command Completion and Double-Tab Menu
 zstyle :compinstall filename '/home/outlaw/.zshrc'
 zstyle ':completion:*' menu select
@@ -59,9 +64,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
-
-# Prompt
-source /opt/homebrew/opt/spaceship/spaceship.zsh
 
 # Syntax Highlighting and Suggestions
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
