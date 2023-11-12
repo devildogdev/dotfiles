@@ -16,7 +16,7 @@ fi
 # Prompt
 source ~/.config/zsh/git-prompt.sh
 setopt PROMPT_SUBST
-precmd() { __git_ps1 '%B%F{4}%1~%f%b %F{5}' '%f%F{2}❱%f ' '[%s] '}
+precmd() { __git_ps1 '%B%F{4}%1~%f%b %F{5}' '%f%F{2}%#%f ' '(%s) '}
 
 # Command Completion and Double-Tab Menu
 zstyle :compinstall filename '/home/outlaw/.zshrc'
