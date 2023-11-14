@@ -19,7 +19,7 @@ setopt PROMPT_SUBST
 precmd() { __git_ps1 '%B%F{4}%1~%f%b %F{5}' '%f%F{2}%#%f ' '(%s) '}
 
 # Command Completion and Double-Tab Menu
-zstyle :compinstall filename '/home/outlaw/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -72,5 +72,3 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Aliases
 alias ls='ls --color=auto'
 alias nv='nvim'
-
-pfetch

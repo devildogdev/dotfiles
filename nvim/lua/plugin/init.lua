@@ -34,19 +34,11 @@ require('lazy').setup({
     end,
   },
 
--- GIT
-  'tpope/vim-fugitive',
-
 -- DEVELOPMENT
-  'tpope/vim-sleuth',
+  { 'tpope/vim-sleuth' },
+  { 'tpope/vim-fugitive' },
   { 'windwp/nvim-autopairs', opts = {} },
   { 'numToStr/Comment.nvim', opts = {} },
-  {
-    'kylechui/nvim-surround',
-    version = '*',
-    event = 'VeryLazy',
-    opts = {},
-  },
 
 -- LSP
   {
@@ -69,6 +61,9 @@ require('lazy').setup({
     event = 'InsertEnter',
     dependencies = {
       { 'L3MON4D3/LuaSnip' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -80,7 +75,9 @@ require('lazy').setup({
       cmp.setup({
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'luasnip' },
           { name = 'buffer' },
+          { name = 'path' },
         },
         mapping = cmp.mapping.preset.insert({
           ['<Tab>'] = cmp_action.tab_complete(),
@@ -135,6 +132,7 @@ require('lazy').setup({
         'vim',
         'vimdoc',
         'query',
+        'go',
         'python',
         'html',
         'css',
@@ -165,18 +163,6 @@ require('lazy').setup({
         lualine_z = {'location'}
       },
     },
-  },
-
--- FILE EXPLORER
-  {
-    -- TODO: Read docs [Maybe use netrw instead]
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    keys = {
-      { '<leader>ef', '<cmd>Neotree toggle<cr>', },
-    },
-    opts = {},
   },
 
 -- FUZZY FINDER
