@@ -62,6 +62,7 @@ require('lazy').setup({
     dependencies = {
       { 'L3MON4D3/LuaSnip' },
       { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' },
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
     },
@@ -75,6 +76,7 @@ require('lazy').setup({
       cmp.setup({
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'nvim_lua' },
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
