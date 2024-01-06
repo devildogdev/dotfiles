@@ -37,8 +37,6 @@ require('lazy').setup({
 -- DEVELOPMENT
   { 'tpope/vim-sleuth' },
   { 'tpope/vim-fugitive' },
-  { 'windwp/nvim-autopairs', opts = {} },
-  { 'numToStr/Comment.nvim', opts = {} },
 
 -- LSP
   {
