@@ -32,9 +32,6 @@ return {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
       }),
-      experimental = {
-        ghost_text = true,
-      },
     })
   end
 }
