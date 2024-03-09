@@ -37,11 +37,8 @@ foreground = "#c5c9c5"
 background = "#2D4F67"
 foreground = "#C8C093"
 
-[env]
-TERM = "xterm-256color"
-
 [font]
-size = 13.0
+size = 16.0
 
 [font.normal]
 family = "Hack Nerd Font"

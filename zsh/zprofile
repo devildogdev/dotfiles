@@ -1,9 +1,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.local/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
+PATH="/opt/homebrew/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:$PATH"
 export PATH
 
-export TERM=xterm-256color
+export TERM=alacritty
 export EDITOR=nvim
 export LESSHISTFILE=-
 export GIT_PS1_SHOWDIRTYSTATE=true
