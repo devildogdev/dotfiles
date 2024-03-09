@@ -71,4 +71,3 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
 alias ls='ls --color=auto'
-alias nv='nvim'
