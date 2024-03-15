@@ -12,7 +12,6 @@ vim.wo.signcolumn = 'yes'
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
-vim.bo.smartindent = true
 vim.o.hlsearch = false
 vim.o.incsearch = true
 vim.o.ignorecase = true
