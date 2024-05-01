@@ -3,7 +3,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 PATH="/opt/homebrew/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:$HOME/.local/bin:$PATH"
 export PATH
 
-export TERM=alacritty
+export TERM=tmux-256color
 export EDITOR=nvim
 export LESSHISTFILE=-
 export GIT_PS1_SHOWDIRTYSTATE=true
