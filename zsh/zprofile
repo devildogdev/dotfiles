@@ -15,3 +15,8 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_STATESEPARATOR=""
 export PF_INFO="ascii title os  shell editor memory palette"
 
+
+# Setting PATH for Python 3.12
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:${PATH}"
+export PATH
