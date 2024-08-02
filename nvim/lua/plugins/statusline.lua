@@ -5,7 +5,7 @@ return {
   },
   opts = {
     options = {
-      theme = 'auto',
+      theme = 'kanagawa',
       component_separators = '|',
       section_separators = '',
     },
