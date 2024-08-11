@@ -1,44 +1,84 @@
 [colors.primary]
-background = '#181616'
-foreground = '#c5c9c5'
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+dim_foreground = "#7f849c"
+bright_foreground = "#cdd6f4"
 
-[colors.normal]
-black = '#0d0c0c'
-red = '#c4746e'
-green = '#8a9a7b'
-yellow = '#c4b28a'
-blue = '#8ba4b0'
-magenta = '#a292a3'
-cyan = '#8ea4a2'
-white = '#c8c093'
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"
 
-[colors.bright]
-black = '#a6a69c'
-red = '#e46876'
-green = '#87a987'
-yellow = '#e6c384'
-blue = '#7fb4ca'
-magenta = '#938aa9'
-cyan = '#7aa89f'
-white = '#c5c9c5'
+[colors.vi_mode_cursor]
+text = "#1e1e2e"
+cursor = "#b4befe"
+
+[colors.search.matches]
+foreground = "#1e1e2e"
+background = "#a6adc8"
+
+[colors.search.focused_match]
+foreground = "#1e1e2e"
+background = "#a6e3a1"
+
+[colors.footer_bar]
+foreground = "#1e1e2e"
+background = "#a6adc8"
+
+[colors.hints.start]
+foreground = "#1e1e2e"
+background = "#f9e2af"
+
+[colors.hints.end]
+foreground = "#1e1e2e"
+background = "#a6adc8"
 
 [colors.selection]
-background = '#2D4F67'
-foreground = '#C8C093'
+text = "#1e1e2e"
+background = "#f5e0dc"
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
+
+[colors.bright]
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
+
+[colors.dim]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
 
 [[colors.indexed_colors]]
 index = 16
-color = '#b6927b'
+color = "#fab387"
 
 [[colors.indexed_colors]]
 index = 17
-color = '#b98d7b'
+color = "#f5e0dc"
 
 [font]
-size = 16.0
+size = 18.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Mono"
 
 [scrolling]
 history = 10000
@@ -46,7 +86,11 @@ multiplier = 3
 
 [window]
 startup_mode = "Windowed"
+decorations = "Buttonless"
+opacity = 0.8
+blur = true
 
 [window.padding]
 x = 10
 y = 10
+
