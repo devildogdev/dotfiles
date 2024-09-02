@@ -73,21 +73,3 @@ color = "#fab387"
 [[colors.indexed_colors]]
 index = 17
 color = "#f5e0dc"
-
-[font]
-size = 18.0
-
-[font.normal]
-family = "Hack Nerd Font Mono"
-
-[scrolling]
-history = 10000
-multiplier = 3
-
-[window]
-startup_mode = "Windowed"
-decorations = "Buttonless"
-
-[window.padding]
-x = 10
-y = 10

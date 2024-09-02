@@ -1,7 +1,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt autocd extendedglob nomatch notify
+setopt extendedglob nomatch notify
 bindkey -v
 
 if type brew &>/dev/null
@@ -32,7 +32,6 @@ zstyle ':completion:*' menu select
 
 # Syntax Highlighting and Suggestions
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
 alias ls='ls --color=auto'

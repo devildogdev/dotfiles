@@ -1,0 +1,61 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // Global
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-j": "journal::NewJournalEntry"
+    }
+  },
+  // Vim in normal mode
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space t": "terminal_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space o": "outline_panel::ToggleFocus",
+      "space x": "diagnostics::Deploy",
+      "space z": "workspace::CloseAllDocks",
+      "space b": "editor::ToggleGitBlameInline",
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch"
+    }
+  },
+  // Moving between panes
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  // Closing docks
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "q": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "OutlinePanel",
+    "bindings": {
+      "q": "workspace::ToggleLeftDock"
+    }
+  },
+  // When no Editor is open
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch"
+    }
+  }
+]
