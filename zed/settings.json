@@ -82,7 +82,7 @@
   // LSP Config
   "languages": {
     "Markdown": {
-      "soft_wrap": "editor_width"
+      "soft_wrap": "bounded"
     }
   }
 }
