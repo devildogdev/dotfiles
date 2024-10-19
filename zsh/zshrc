@@ -4,14 +4,20 @@ SAVEHIST=10000
 setopt extendedglob nomatch notify
 bindkey -v
 
+# Homebrew setup
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
   compinit
+
+  autoload bashcompinit
+  bashcompinit
+  source "$(brew --prefix)/etc/bash_completion.d/az"
 fi
 
+# Python venv info
 virtualenv_prompt() {
     [[ "$VIRTUAL_ENV" == "" ]] && return
 
@@ -21,7 +27,7 @@ virtualenv_prompt() {
     fi
 }
 
-# Prompt
+# Prompt with Git info
 source ~/.config/zsh/git-prompt.sh
 setopt PROMPT_SUBST
 precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
@@ -30,8 +36,7 @@ precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 
-# Syntax Highlighting and Suggestions
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Aliases
 alias ls='ls --color=auto'
+
+pfetch

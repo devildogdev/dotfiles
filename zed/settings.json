@@ -1,29 +1,22 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `zed: Open Default Settings` command
-// from the command palette
 {
-  // Theme
+  "format_on_save": "prettier",
   "theme": {
     "mode": "dark",
     "light": "One Light",
     "dark": "Catppuccin Mocha"
   },
-  // Fonts
   "terminal": {
+    "toolbar": {
+      "title": false
+    },
+    "alternate_scroll": "on",
     "line_height": "standard",
     "font_family": "Hack Nerd Font Mono",
-    "button": false
+    "button": false,
+    "detect_venv": "off"
   },
   "use_autoclose": false,
-  "buffer_font_size": 16,
   "buffer_font_family": "Hack Nerd Font Mono",
-  "ui_font_size": 16,
-  // Vim comforts
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "never"
@@ -37,7 +30,6 @@
       "enabled": false
     }
   },
-  // Minimal UI
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": false
@@ -55,7 +47,10 @@
     "button": false
   },
   "project_panel": {
-    "button": false
+    "button": false,
+    "scrollbar": {
+      "show": "never"
+    }
   },
   "outline_panel": {
     "button": false
@@ -66,7 +61,6 @@
   "gutter": {
     "code_actions": false
   },
-  // No AI
   "assistant": {
     "enabled": false,
     "button": false,
@@ -75,14 +69,18 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  // Misc
   "journal": {
     "hour_format": "hour24"
   },
-  // LSP Config
   "languages": {
     "Markdown": {
       "soft_wrap": "bounded"
-    }
+    },
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": false
+      }
+    },
+    "JavaScript": { "format_on_save": "off" }
   }
 }

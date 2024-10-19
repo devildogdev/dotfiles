@@ -9,9 +9,7 @@
   // Global
   {
     "context": "Workspace",
-    "bindings": {
-      "cmd-shift-j": "journal::NewJournalEntry"
-    }
+    "bindings": {}
   },
   // Vim in normal mode
   {
@@ -21,10 +19,11 @@
       "space e": "project_panel::ToggleFocus",
       "space o": "outline_panel::ToggleFocus",
       "space x": "diagnostics::Deploy",
-      "space z": "workspace::CloseAllDocks",
       "space b": "editor::ToggleGitBlameInline",
       "space f f": "file_finder::Toggle",
-      "space f g": "pane::DeploySearch"
+      "space f g": "pane::DeploySearch",
+      "space j": "journal::NewJournalEntry",
+      "space z": "workspace::ToggleCenteredLayout"
     }
   },
   // Moving between panes
@@ -54,6 +53,9 @@
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
+      "space t": "terminal_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space o": "outline_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
       "space f g": "pane::DeploySearch"
     }
