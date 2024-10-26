@@ -36,6 +36,9 @@ precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 
+# Syntax Highlighting and Suggestions
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Aliases
 alias ls='ls --color=auto'
 
