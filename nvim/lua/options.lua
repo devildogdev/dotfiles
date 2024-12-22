@@ -1,19 +1,18 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-vim.g.netrw_banner = false
-vim.go.errorbells = false
-vim.go.scrolloff = 10
-vim.go.mouse = 'nv'
-vim.go.termguicolors = true
-vim.wo.wrap = false
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.signcolumn = 'yes'
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.tabstop = 4
-vim.o.hlsearch = false
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.completeopt = 'menuone,noselect'
-vim.o.swapfile = false
+local set = vim.opt
+
+set.completeopt = 'menuone,noselect'
+set.expandtab = true
+set.hlsearch = false
+set.ignorecase = true
+set.mouse = 'nv'
+set.number = true
+set.relativenumber = true
+set.scrolloff = 10
+set.shiftwidth = 4
+set.signcolumn = 'yes'
+set.smartcase = true
+set.softtabstop = 4
+set.splitright = true
+set.splitbelow = true
+set.wrap = false
+

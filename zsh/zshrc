@@ -1,23 +1,17 @@
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
-setopt extendedglob nomatch notify
+setopt nobeep extendedglob nomatch histsavenodups histignorespace
 bindkey -v
 
-# Homebrew setup
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source <(fzf --zsh)
 
-  autoload -Uz compinit
-  compinit
-
-  autoload bashcompinit
-  bashcompinit
-  source "$(brew --prefix)/etc/bash_completion.d/az"
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:${FPATH}
+  autoload -Uz compinit; compinit
 fi
 
-# Python venv info
 virtualenv_prompt() {
     [[ "$VIRTUAL_ENV" == "" ]] && return
 
@@ -27,19 +21,9 @@ virtualenv_prompt() {
     fi
 }
 
-# Prompt with Git info
 source ~/.config/zsh/git-prompt.sh
 setopt PROMPT_SUBST
 precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
 
-# Command Completion and Double-Tab Menu
-zstyle :compinstall filename '~/.zshrc'
-zstyle ':completion:*' menu select
-
-# Syntax Highlighting and Suggestions
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Aliases
 alias ls='ls --color=auto'
-
-pfetch
+alias notes='cd ~/Documents/notes'
