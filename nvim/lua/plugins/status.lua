@@ -10,12 +10,12 @@ return {
       section_separators = '',
     },
     sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
+      lualine_a = { 'mode' },
+      lualine_b = { 'diagnostics' },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = {'filename'},
-      lualine_z = {'location','progress'}
+      lualine_y = { 'filename' },
+      lualine_z = { 'location','progress' }
     },
   },
 }
