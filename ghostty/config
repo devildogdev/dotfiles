@@ -1,4 +1,4 @@
-theme = "lackluster"
+theme = "tokyonight_night"
 font-family = "Hack Nerd Font"
 font-size = 16
 cursor-style-blink = false

@@ -5,7 +5,7 @@ return {
   },
   opts = {
     options = {
-      theme = 'lackluster',
+      theme = 'tokyonight-night',
       component_separators = '|',
       section_separators = '',
     },
