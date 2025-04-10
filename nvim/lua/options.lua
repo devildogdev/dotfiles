@@ -7,6 +7,7 @@ set.ignorecase = true
 set.mouse = 'nv'
 set.number = true
 set.relativenumber = true
+set.ruler = false
 set.scrolloff = 10
 set.shiftwidth = 4
 set.signcolumn = 'yes'

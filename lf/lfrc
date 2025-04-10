@@ -1,5 +1,4 @@
 set scrolloff 10
-set icons
 
 cmd open &{{
     case $(file --mime-type -Lb $f) in

@@ -18,11 +18,20 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.netrw_banner = false
 
+vim.g.loaded_perl_provider = false
+vim.g.loaded_ruby_provider = false
+vim.g.loaded_python3_provider = false
+vim.g.loaded_node_provider = false
+
 require('options')
 require('keymaps')
 require('lazy').setup({
   spec = {
     { import = 'plugins' }
+  },
+  rocks = {
+    enabled = false,
+    hererocks = false,
   },
   install = { colorscheme = { 'catppuccin-mocha' } },
 })
