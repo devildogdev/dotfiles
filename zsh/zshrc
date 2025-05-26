@@ -3,7 +3,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 typeset -U path
-path=($HOME/.local/bin $HOME/go/bin/ /opt/homebrew/opt/postgresql@15/bin $path)
+path=($HOME/.local/bin $HOME/go/bin/ $path)
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -65,6 +65,7 @@ setopt PROMPT_SUBST
 precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
 
 alias ls='ls --color=auto'
-alias notes='cd ~/Documents/notes'
-alias dotfiles='cd ~/repos/dotfiles'
+alias vim='nvim'
+alias notes='~/Documents/notes'
+alias dotfiles='~/repos/dotfiles'
 alias love='/Applications/love.app/Contents/MacOS/love'
