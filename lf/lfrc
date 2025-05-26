@@ -1,4 +1,5 @@
 set scrolloff 10
+set hidden
 
 cmd open &{{
     case $(file --mime-type -Lb $f) in
