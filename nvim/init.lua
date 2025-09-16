@@ -24,7 +24,7 @@ vim.g.loaded_python3_provider = false
 vim.g.loaded_node_provider = false
 
 vim.o.completeopt = 'menuone,noselect'
-vim.o.expandtab = true
+vim.o.expandtab = false
 vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.mouse = 'nv'

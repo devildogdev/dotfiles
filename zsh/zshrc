@@ -9,6 +9,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=none
 export LESSHISTFILE=-
+export HOMEBREW_NO_EMOJI=1
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -66,6 +67,4 @@ precmd() { __git_ps1 '$(virtualenv_prompt)%B%F{4}%3~%f%b' ' %# ' ' %s'}
 
 alias ls='ls --color=auto'
 alias vim='nvim'
-alias notes='~/Documents/notes'
-alias dotfiles='~/repos/dotfiles'
 alias love='/Applications/love.app/Contents/MacOS/love'
