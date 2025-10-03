@@ -52,7 +52,6 @@ return {
           end,
         },
       }
-      vim.diagnostic.config {}
     end,
   },
 }
