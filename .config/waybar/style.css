@@ -31,6 +31,13 @@ window#waybar {
     box-shadow: inset 0 -3px @mauve;
 }
 
+#workspaces button:hover {
+    background: #000000;
+    box-shadow: inset 0 -3px @mauve;
+    text-shadow: none;
+    transition: none;
+}
+
 #workspaces button.urgent {
     color: @peach;
 }
