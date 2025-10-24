@@ -2,13 +2,13 @@ theme = "Catppuccin Mocha"
 background = #000000
 cursor-text = #000000
 font-family = "Hack Nerd Font"
-font-size = 16
+font-size = 13
 mouse-hide-while-typing = true
 cursor-style-blink = false
 window-padding-x = 8
 window-padding-y = 8
 window-decoration = false
-macos-titlebar-style = hidden
+resize-overlay = never
 shell-integration = zsh
 shell-integration-features = no-cursor,no-sudo,no-title
 keybind = super+alt+h=goto_split:left

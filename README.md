@@ -1,3 +1,3 @@
-## My MacOS dotfiles
+## My Arch dotfiles
 
-It's my setup.
+Gave up my $2,000 MacBook for a $200 ThinkPad, and I couldn't be happier.

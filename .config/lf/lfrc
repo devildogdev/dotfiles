@@ -1,0 +1,14 @@
+set shell sh
+set shellopts '-eu'
+
+set icons
+set drawbox
+set hidden
+set scrolloff 10
+
+cmd trash %set -f; mv -t ~/.trash $fx
+
+map <enter> shell
+map o &mimeopen $f
+map D trash
+
