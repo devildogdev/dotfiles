@@ -6,7 +6,7 @@ set drawbox
 set hidden
 set scrolloff 10
 
-cmd trash %set -f; mv -t ~/.trash $fx
+cmd trash %trash-put -- $fx
 
 map <enter> shell
 map o &mimeopen $f
